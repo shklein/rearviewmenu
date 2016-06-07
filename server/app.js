@@ -5,7 +5,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 // modules
+var recipes = require('./routes/recipes')
 var index = require('./routes/index');
+
 
 
 
@@ -15,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // express routes
+app.use('/recipes', recipes);
 app.use('/', index);
-
 
 // mongoose connection
 var databaseURI = 'mongodb://localhost:27017/mu';

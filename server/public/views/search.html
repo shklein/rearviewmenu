@@ -1,3 +1,10 @@
-<p>
-  Search form goes here.
-</p>
+<h2>Search Recipes</h2>
+
+<form>
+  <label for="keyword">Keyword</label>
+  <input id="reqKeyword" name="keyword" ng-model="keyword" placeholder="Search for an ingredient" />
+  <button ng-click="searchRecipes()">Submit</button>
+</form>
+<div ng-repeat="recipe in recipes">
+  <p>{{recipe.title}}</p>
+</div>

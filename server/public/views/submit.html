@@ -1,3 +1,36 @@
-<p>
-  Form goes here.
-</p>
+<section class="wrapper">
+<fieldset>
+  <legend>Save a Recipe</legend>
+  <ol>
+    <li>
+      <label for="source">Type of Source:</label>
+      <select ng-model="selectedSource" ng-options="x for x in sources">
+      </select>
+    </li>
+    <li>
+      <label for="title">Name:</label>
+      <input id="currentRecTitle" name="title" ng-model="currentRec.title" placeholder="Name of Recipe" />
+    </li>
+    <li>
+      <label for="citation">Citation:</label>
+      <input id="currentRecCitation" name="citation" ng-model="currentRec.citation" placeholder="Location of Recipe" />
+    </li>
+    <li>
+      <label for="mainIngred">Main Ingredient:</label>
+      <input id="currentRecMainIngred" name="mainIngred" ng-model="currentRec.mainIngred" placeholder="Main Ingredient" />
+    </li>
+    <li>
+      <label for="rating">Rating (1 to 5)</label>
+      <input type="number" id="currentRecRating" name="rating" ng-model="currentRec.rating" />
+    </li>
+    <li>
+      <label for="date_made">Date Made:</label>
+      <input type="date" id="currentRecDate" name="date_made" ng-model="currentRec.date_made" />
+    </li>
+    <li>
+      <button ng-click="submitCurrentRec()">Submit</button>
+    </li>
+
+  </ol>
+</fieldset>
+</section>
