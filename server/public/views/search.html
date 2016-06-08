@@ -1,10 +1,19 @@
 <h2>Search Recipes</h2>
 
-<form>
-  <label for="keyword">Keyword</label>
-  <input id="reqKeyword" name="keyword" ng-model="keyword" placeholder="Search for an ingredient" />
-  <button ng-click="searchRecipes()">Submit</button>
-</form>
+
+
+  <label for="source">Search By: </label>
+  <select ng-change="searchType()" ng-model="selectedSource" ng-options="x for x in searchTerm">
+  </select>
+  <div ng-show="textBox" class="ng-hide">
+    <input id="reqKeyword" name="keyword" ng-model="keyword" />
+    <button ng-click="searchRecipes()">Submit</button>
+  </div>
+  <div ng-show="numBox" class="ng-hide">
+    <input type="number" id="reqKeyword" name="keyword" ng-model="rating" />
+    <button ng-click="searchRecipes()">Submit</button>
+  </div>
 <div ng-repeat="recipe in recipes">
   <p>{{recipe.title}}</p>
+</div>
 </div>

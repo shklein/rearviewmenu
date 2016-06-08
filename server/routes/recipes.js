@@ -4,8 +4,16 @@ var path = require('path');
 var Recipe = require('../models/recipe');
 
 router.get('/', function (req, res) {
-  console.log(req.query.query);
-  Recipe.find({ $or: [{ "title": req.query.query }, { "mainIngred": req.query.query }]}, function (err, recipes) {
+  var searchTerm = {};
+   if (req.query.title) {
+    searchTerm = {"title": new RegExp(req.query.title, "i")};
+    } else if (req.query.mainIngred) {
+  searchTerm = {"mainIngred": req.query.mainIngred};
+    } else {
+   searchTerm = {"rating": req.query.rating};
+  }
+
+  Recipe.find(searchTerm, function (err, recipes) {
     if (err) {
       res.sendStatus(500);
       return;
@@ -14,6 +22,7 @@ router.get('/', function (req, res) {
     res.send(recipes);
   });
 });
+
 
 router.post('/', function (req, res) {
   var recipe = new Recipe(req.body);

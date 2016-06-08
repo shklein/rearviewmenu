@@ -4,6 +4,8 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+mongoose.set('debug', true)
+
 // modules
 var recipes = require('./routes/recipes')
 var index = require('./routes/index');
