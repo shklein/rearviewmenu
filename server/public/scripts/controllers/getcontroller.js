@@ -5,6 +5,7 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
   $scope.recipes = [];
   $scope.textBox = false;
   $scope.numBox = false;
+  
 
 //show/hide search box
   $scope.searchType = function () {
@@ -33,7 +34,7 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
         console.log('GET /recipes', response.data);
 
       });
-    };  
+    };
 
 
 }]);

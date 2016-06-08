@@ -13,7 +13,8 @@
     <input type="number" id="reqKeyword" name="keyword" ng-model="rating" />
     <button ng-click="searchRecipes()">Submit</button>
   </div>
-<div ng-repeat="recipe in recipes">
-  <p>{{recipe.title}}</p>
-</div>
+<div lightbox="recipes">
+  <p ng-repeat="recipe in recipes">
+    <a href="{{recipe}}" class="lightbox-trigger">{{recipe.title}}</a>
+  </p>
 </div>
