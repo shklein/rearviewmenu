@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'angular-lightbox']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngModal']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider

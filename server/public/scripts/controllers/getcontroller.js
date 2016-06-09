@@ -5,14 +5,18 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
   $scope.recipes = [];
   $scope.textBox = false;
   $scope.numBox = false;
-  
+  $scope.message = false;
+
+
 
 //show/hide search box
   $scope.searchType = function () {
     if ($scope.selectedSource == "Rating") {
+      $scope.textBox= false;
       $scope.numBox = true;
     } else {
       $scope.textBox = true;
+      $scope.numBox = false;
     }
 
   };
@@ -30,11 +34,28 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
     };
 
     $http.get(query).then(function (response) {
-        $scope.recipes = response.data;
-        console.log('GET /recipes', response.data);
+      response.data.forEach(function (recipe) {
+          recipe.dialogShown = false;
+        });
+      $scope.recipes = response.data;
+      console.log('GET /recipes', response.data);
+
+      if ($scope.recipes.length == 0) {
+        $scope.message = true;
+      }
+
 
       });
     };
 
+$scope.showRecipe = function (id) {
+  $scope.recipes.forEach(function (rec) {
+      if (rec._id == id) {
+        rec.dialogShown = true;
+      } else {
+        rec.dialogShown = false;
+      }
+    });
+  };
 
 }]);

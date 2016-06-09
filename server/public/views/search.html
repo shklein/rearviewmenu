@@ -13,8 +13,16 @@
     <input type="number" id="reqKeyword" name="keyword" ng-model="rating" />
     <button ng-click="searchRecipes()">Submit</button>
   </div>
-<div lightbox="recipes">
-  <p ng-repeat="recipe in recipes">
-    <a href="{{recipe}}" class="lightbox-trigger">{{recipe.title}}</a>
-  </p>
+  <div ng-repeat="recipe in recipes">
+    <div>
+      <p ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
+      <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
+        <p>Citation: {{recipe.citation}}</p>
+        <p>Date made: {{recipe.date}}</p>
+        <p>Rating: {{recipe.rating}}</p>
+      </modal-dialog>
+    </div>
+</div>
+<div ng-show="message" class="ng-hide">
+<p>No results returned.</p>
 </div>

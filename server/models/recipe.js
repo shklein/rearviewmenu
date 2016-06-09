@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var RecipeSchema = new Schema({
   title: { type: String},
   citation: {type: String},
-  mainIngred: {type: String},
+  mainIngred: {type: Array},
   rating: {type: Number},
   date_made: {type: Date},
   source: {type: String}
