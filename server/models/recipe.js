@@ -7,7 +7,7 @@ var RecipeSchema = new Schema({
   citation: {type: String},
   mainIngred: {type: Array},
   rating: {type: Number},
-  date_made: {type: Date},
+  date_made: {type: String},
   source: {type: String}
 
 });

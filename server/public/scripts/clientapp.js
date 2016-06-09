@@ -2,6 +2,10 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngModal']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    .when('/home', {
+      templateUrl: '/views/home.html',
+      controller: "PostController"
+    })
     .when('/submit', {
       templateUrl: '/views/submit.html',
       controller: "PostController"
@@ -15,7 +19,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
       controller: "GetController"
     })
     .otherwise({
-      redirectTo: 'submit'
+      redirectTo: 'home'
     })
 
 }

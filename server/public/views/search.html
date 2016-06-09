@@ -1,3 +1,5 @@
+<section id="content">
+
 <h2>Search Recipes</h2>
 
 
@@ -18,7 +20,9 @@
       <p ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
         <p>Citation: {{recipe.citation}}</p>
-        <p>Date made: {{recipe.date}}</p>
+        <p>Main Ingredient(s): {{mainIngred}}</p>
+        </p>
+        <p>Date made: {{recipe.date_made}}</p>
         <p>Rating: {{recipe.rating}}</p>
       </modal-dialog>
     </div>
@@ -26,3 +30,5 @@
 <div ng-show="message" class="ng-hide">
 <p>No results returned.</p>
 </div>
+
+</section>

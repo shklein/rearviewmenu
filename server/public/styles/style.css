@@ -1,5 +1,11 @@
+body {
+  background-color: silver;
+}
+
 h1 {
   text-align: center;
+  font-family: 'Rock Salt', cursive;
+  font-size: 30px;
 
 }
 
@@ -14,7 +20,6 @@ ul {
   height: 225px;
   width: auto;
   text-align: left;
-  background: lightblue;
   border: 10px;
   border-radius: 10px;
 }
@@ -25,4 +30,35 @@ ol {
 
 li {
   margin: 5px;
+}
+
+img {
+  height: 250px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav li a {
+    padding: 0 10px;
+}
+
+#content {
+
+    background-color: white;
+    clear: right;
+    align: center;
+}
+
+
+.foot {
+  text-align: center;
 }
