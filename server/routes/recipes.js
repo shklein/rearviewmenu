@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
    if (req.query.title) {
     searchTerm = {"title": new RegExp(req.query.title, "i")};
     } else if (req.query.mainIngred) {
-  searchTerm = {"mainIngred": req.query.mainIngred};
+  searchTerm = {"mainIngred": new RegExp(req.query.mainIngred, "i")};
     } else {
    searchTerm = {"rating": req.query.rating};
   }

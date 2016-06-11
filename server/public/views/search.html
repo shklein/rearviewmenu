@@ -1,6 +1,6 @@
 <section id="content">
 
-<h2>Search Recipes</h2>
+<legend>Search Recipes</legend>
 
 
 
@@ -17,15 +17,14 @@
   </div>
   <div ng-repeat="recipe in recipes">
     <div>
-      <p ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
+      <p class="citations" ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
-        <p>Citation: {{recipe.citation}}</p>
+        <p ng-if="recipe.source == 'URL'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
+        <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>
         <p>Main Ingredient(s): {{mainIngred}}</p>
-        </p>
-        <p>Date made: {{recipe.date_made}}</p>
+        <p>Date made: {{recipe.date_made | date: 'MM/dd/yyyy'}}</p>
         <p>Rating: {{recipe.rating}}</p>
       </modal-dialog>
-    </div>
 </div>
 <div ng-show="message" class="ng-hide">
 <p>No results returned.</p>

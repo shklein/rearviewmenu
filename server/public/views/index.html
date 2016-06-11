@@ -3,6 +3,7 @@
 <head>
   <title>Rearview Menu: Dinner at a (Backwards) Glance</title>
   <!--CSS-->
+  <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="../styles/ng-modal.css" />
@@ -18,13 +19,25 @@
 
 </head>
 <body ng-app="myApp">
+  <div class="container">
+    <div class="row">
+        <header ng-include="'../views/templates/header.html'"></header>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div ng-include="'../views/templates/nav.html'"></div>
+    </div>
 
-    <header ng-include="'../views/templates/header.html'"></header>
+    <div class="col-md-8 text-center">
+      <main ng-view></main>
+    </div>
 
-    <div ng-include="'../views/templates/nav.html'"></div>
+    <div class="col-md-2"></div>
+  </div>
 
-    <main ng-view></main>
-
-    <footer ng-include="'../views/templates/footer.html'"></footer>
+  <div class="row">
+    <footer class="row text-center" ng-include="'../views/templates/footer.html'"></footer>
+  </div>
+  
 </body>
 </html>

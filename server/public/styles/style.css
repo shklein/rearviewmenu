@@ -9,19 +9,8 @@ h1 {
 
 }
 
-h2 {
-  text-align: center;
-}
-
 ul {
   list-style-type: none;
-}
-.wrapper {
-  height: 225px;
-  width: auto;
-  text-align: left;
-  border: 10px;
-  border-radius: 10px;
 }
 
 ol {
@@ -49,16 +38,32 @@ nav ul {
 
 nav li a {
     padding: 0 10px;
+    color: black;
 }
 
-#content {
+nav li a:hover {
+  color: darkblue;
+}
 
+
+#content {
+    height: 400px;
+    width: auto;
     background-color: white;
+    border: solid 8px black;
+    border-radius: 8px;
     clear: right;
     align: center;
 }
 
+.citations:hover {
+  text-decoration: underline;
+  cursor:pointer;
+  color: darkblue;
+}
 
-.foot {
-  text-align: center;
+.home {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  align: center;
 }

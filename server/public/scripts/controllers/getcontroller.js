@@ -6,6 +6,8 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
   $scope.textBox = false;
   $scope.numBox = false;
   $scope.message = false;
+  $scope.showURL = false;
+
 
 
 
@@ -36,6 +38,7 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
     $http.get(query).then(function (response) {
       response.data.forEach(function (recipe) {
           recipe.dialogShown = false;
+          recipe.date_made = new Date(recipe.date_made);
         });
       $scope.recipes = response.data;
       console.log('GET /recipes', response.data);
@@ -54,8 +57,19 @@ $scope.showRecipe = function (id) {
         rec.dialogShown = true;
       } else {
         rec.dialogShown = false;
-      }
+      };
+  
+
     });
   };
+
+function createURL (recipe) {
+  if (recipe.source == 'URL') {
+    $scope.showURL = true;
+
+  } else {
+  $scope.showURL = false;
+  }
+};
 
 }]);
