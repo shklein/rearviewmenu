@@ -67,3 +67,13 @@ nav li a:hover {
   padding-bottom: 150px;
   align: center;
 }
+
+.calendar {
+  height: auto;
+  width: auto;
+  background-color: white;
+  border: solid 8px black;
+  border-radius: 8px;
+  clear: right;
+  align: center;
+}

@@ -9,9 +9,9 @@ router.get('/', function (req, res) {
     searchTerm = {"title": new RegExp(req.query.title, "i")};
     } else if (req.query.mainIngred) {
   searchTerm = {"mainIngred": new RegExp(req.query.mainIngred, "i")};
-    } else {
+} else if (req.query.rating) {
    searchTerm = {"rating": req.query.rating};
-  }
+ }
 
   Recipe.find(searchTerm, function (err, recipes) {
     if (err) {

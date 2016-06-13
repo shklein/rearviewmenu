@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngModal']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngModal', 'ui.calendar']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -16,7 +16,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/cal', {
       templateUrl: '/views/cal.html',
-      controller: "GetController"
+      controller: "CalController"
     })
     .otherwise({
       redirectTo: 'home'

@@ -3,6 +3,7 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
 {
   $scope.searchTerm = ["Title", "Main Ingredient", "Rating"];
   $scope.recipes = [];
+  $scope.eventSources = [];
   $scope.textBox = false;
   $scope.numBox = false;
   $scope.message = false;
@@ -58,7 +59,7 @@ $scope.showRecipe = function (id) {
       } else {
         rec.dialogShown = false;
       };
-  
+
 
     });
   };
