@@ -59,18 +59,11 @@ $scope.showRecipe = function (id) {
       } else {
         rec.dialogShown = false;
       };
-
+console.log(rec);
 
     });
   };
 
-function createURL (recipe) {
-  if (recipe.source == 'URL') {
-    $scope.showURL = true;
 
-  } else {
-  $scope.showURL = false;
-  }
-};
 
 }]);

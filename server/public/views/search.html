@@ -11,7 +11,6 @@
   <div class="form-group-row">
     <div ng-show="textBox" class="col-sm-offset-2 col-sm-10 ng-hide">
     <input id="reqKeyword" name="keyword" ng-model="keyword" class="form-control" />
-    <button ng-click="searchRecipes()">Submit</button>
     </div>
     <div ng-show="numBox" class="col-sm-offset-2 col-sm-10 ng-hide">
     <input type="number" id="reqKeyword" name="keyword" ng-model="rating" class="form-control" />
@@ -19,9 +18,9 @@
 </div>
     <button ng-click="searchRecipes()">Submit</button>
   <div ng-show="message" class="ng-hide">
-    <h2>No results returned.</h2>
+    <h3>No results returned.</h3>
   </div>
-  <div ng-repeat="recipe in recipes">
+  <div ng-repeat="recipe in recipes | orderBy:'-date_made':reverse">
     <div>
       <p class="citations" ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>

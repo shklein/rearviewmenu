@@ -1,15 +1,23 @@
 body {
+  background: url('../views/images/counter.jpeg');
   background-color: peachpuff;
 }
 
 h1 {
   text-align: center;
   font-family: 'Rock Salt', cursive;
+  color: black;
   font-size: 30px;
+  font-weight: bolder;
 
 }
 
 h2 {
+  text-align: left;
+  font-family: 'Rock Salt', cursive;
+}
+
+h3 {
   text-align: center;
   font-family: 'Rock Salt', cursive;
 }
@@ -33,16 +41,24 @@ img {
   margin-right: auto
 }
 
+nav {
+  background-color: white;
+  padding: 10px;
+  border: solid 8px black;
+  border-radius: 8px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+
 }
 
 
 nav li a {
     padding: 0 10px;
-    color: black;
+    color: blue;
 }
 
 nav li a:hover {
@@ -59,6 +75,7 @@ nav li a:hover {
     clear: right;
     align: center;
     padding: 10px;
+    opacity: 1.0;
 }
 
 .citations:hover {
@@ -67,13 +84,6 @@ nav li a:hover {
   color: darkblue;
 }
 
-.home {
-  text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
-
-
-}
 
 .calendar {
   height: auto;
@@ -84,4 +94,9 @@ nav li a:hover {
   clear: right;
   align: center;
   padding: 10px;
+}
+
+footer {
+  font-family: 'Rock Salt', cursive;
+  font-weight: bolder;
 }

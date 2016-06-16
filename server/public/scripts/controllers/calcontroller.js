@@ -2,8 +2,9 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
 {
 
 
-  $scope.eventSource = [];
+  $scope.eventSources = [];
   $scope.events = [];
+  $scope.recipes = [];
 
   getRecipes();
 
@@ -12,14 +13,14 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
       .then(function (response) {
         response.data.forEach(function (recipe) {
             var event = new Event (recipe._id, recipe.title, recipe.date_made);
-            event.allDay = true;
-            console.log(event);
+            event.recipe = recipe;
+            event.recipe.dialogShown = false;
             $scope.events.push(event);
-            console.log($scope.events);
           });
 
             $scope.recipes = response.data;
-        console.log('GET /recipes ', response.data);
+            console.log(response.data);
+
       });
 };
 
@@ -29,6 +30,23 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
                      'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
+
+    /* alert on eventClick */
+    $scope.alertOnEventClick = function( date, jsEvent, view){
+      $scope.recipes.forEach(function (rec) {
+          if (rec._id == date.recipe._id) {
+            date.recipe.dialogShown = true;
+
+          }
+        });
+      };
+
+
+
+
+
+
+
     /* config object */
     $scope.uiConfig = {
       calendar:{
@@ -47,16 +65,21 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
     };
 
 
+
     /* event sources array*/
-    $scope.eventSources = [$scope.events, $scope.eventSource];
+    $scope.eventSources = [$scope.events];
     $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
 
 
 function Event (id, title, start) {
-  this._id = id
   this.title = title,
-  this.date = start
+  this.date = start,
+  this.allDay = true,
+  this.stick = true
 };
+
+
+
 
 
 }]);
