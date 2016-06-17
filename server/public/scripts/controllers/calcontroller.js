@@ -19,7 +19,7 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
           });
 
             $scope.recipes = response.data;
-            console.log(response.data);
+        
 
       });
 };

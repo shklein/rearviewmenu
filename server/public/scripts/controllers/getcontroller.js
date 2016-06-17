@@ -59,7 +59,7 @@ $scope.showRecipe = function (id) {
       } else {
         rec.dialogShown = false;
       };
-console.log(rec);
+
 
     });
   };
