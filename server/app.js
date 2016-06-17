@@ -23,7 +23,16 @@ app.use('/recipes', recipes);
 app.use('/', index);
 
 // mongoose connection
-var databaseURI = 'mongodb://localhost:27017/mu';
+var databaseURI = ‘’;
+// process.env.MONGODB_URI will only be defined if you
+// are running on Heroku
+if(process.env.MONGODB_URI != undefined) {
+    // use the string value of the environment variable
+    databaseURI = process.env.MONGODB_URI;
+} else {
+    // use the local database server
+    databaseURI = 'mongodb://localhost:27017/mu';
+}
 
 mongoose.connect(databaseURI);
 
