@@ -23,7 +23,7 @@ app.use('/recipes', recipes);
 app.use('/', index);
 
 // mongoose connection
-var databaseURI = ‘’;
+var databaseURI = '';
 // process.env.MONGODB_URI will only be defined if you
 // are running on Heroku
 if(process.env.MONGODB_URI != undefined) {
