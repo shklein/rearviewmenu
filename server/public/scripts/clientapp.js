@@ -15,6 +15,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/cal.html',
       controller: "CalController"
     })
+    .when('/list', {
+      templateUrl: '/views/list.html',
+      controller: "ListController"
+    })
     .otherwise({
       redirectTo: 'submit'
     })
