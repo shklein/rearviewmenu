@@ -76,6 +76,12 @@ nav li a:hover {
     align: center;
     padding: 10px;
     opacity: 1.0;
+
+}
+
+#content .list {
+  flex: 1;
+  display: flex;
 }
 
 .citations:hover {
