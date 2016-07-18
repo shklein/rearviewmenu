@@ -67,7 +67,7 @@ nav li a:hover {
 
 
 #content {
-    height: 500px;
+    height: auto;
     width: auto;
     background-color: white;
     border: solid 8px black;
