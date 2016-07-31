@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
     }
 
     res.send(recipes);
-  }).limit(25);
+  }).limit(50);
 });
 
 
