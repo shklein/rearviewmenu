@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var DateSchema = require('./dates').schema;
 
 
 
@@ -8,7 +9,7 @@ var RecipeSchema = new Schema({
   citation: {type: String},
   mainIngred: {type: String},
   rating: {type: Number},
-  date_made: {type: String},
+  date_made: [DateSchema],
   source: {type: String}
 
 });

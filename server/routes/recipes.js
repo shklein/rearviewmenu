@@ -26,6 +26,9 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
   var recipe = new Recipe(req.body);
+  var date = new Date(req.body.date_made);
+
+  recipe.date_made.push(date);
   recipe.save(function (err) {
     if (err) {
       console.log(err);
